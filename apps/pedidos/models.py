@@ -47,11 +47,14 @@ class Memoria(models.Model):
 
     CAP = (('4', '4'), ('8', '8'), ('16', '16'), ('32', '32'), ('64', '64'))
 
-    marca = models.CharField(verbose_name='Marca Memória', max_length=20, null=False, default='Hyper X')
     capacidade = models.CharField(verbose_name='Capacidade', max_length=20, null=False, choices=CAP)
 
     def __str__(self):
-        return self.marca +' '+ self.capacidade + 'gb'
+        return 'Hyper X '+ self.capacidade + 'gb'
+
+    def value(self):
+        value = int(self.capacidade)
+        return value
 
 class Vga(models.Model):
 
@@ -83,7 +86,7 @@ class Computador(models.Model):
     descricao = models.CharField(max_length=100, blank=True, null=False)
     processador = models.ForeignKey(Processador, on_delete=models.CASCADE, null=False)
     pl = models.ForeignKey(PlacaMae, on_delete=models.CASCADE, null=False)
-    memorias = models.ManyToManyField(Memoria)
+    memorias = models.ManyToManyField(Memoria, related_name='memorias')
     vga = models.ForeignKey(Vga, on_delete=models.CASCADE, null=False)
 
 

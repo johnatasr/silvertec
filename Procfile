@@ -1,1 +1,1 @@
-web: gunicorn claro_pesquisa_django.wsgi --log-file -
+web: uwsgi uwsgi.ini
