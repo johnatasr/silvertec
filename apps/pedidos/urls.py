@@ -1,13 +1,13 @@
 from django.urls import include, path, re_path
+from rest_framework import routers
 from . import views
 
 app_name = 'pedidos'
+router = routers.DefaultRouter()
 
 urlpatterns = [
-    # re_path(r'^api/pedidos/(?P<pk>[0-9]+)$', # Url to get update or delete a movie
-    #     views.get_delete_update_movie.as_view(),
-    #     name='get_delete_update_movie'
-    # ),
-    path('api/pedidos/', views.get_post_pedidos.as_view(), name='get_post_pedidos'
-    )
+    path('pedidos/', views.pedidos_viewsets.as_view(), name='Pedidos'),
+    # path('pedidos/<int:id>', views.pedidos_viewsets.as_view(), name='Pedidos'),
+    path('montar/', views.computadores_viewsets.as_view(), name='Montar Computadores')
+    # path('listar/<int:id>', views.computadores_viewsets.as_view(), name='Montar Computadores')
 ]
