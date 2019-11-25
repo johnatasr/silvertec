@@ -35,7 +35,7 @@ Endpoint | Método HTTP  | CRUD  | Resultado
 ## Uso
 
 Para testar e criar as requisições, pode-se usar o Postman ou Insomnia, caso queira testar já em produção acesse :
-(https://confluence.atlassian.com/x/8QhODQ)
+https://silvertecdeploy.herokuapp.com/
 
 
 Outra opção é o httpie :
@@ -97,12 +97,12 @@ Algumas restrições da API:
 Caso queira fazer um deploy em container é possível através do docker-compose, onde possui todas dependências nessesárias para poder executar.
 
 ```
-docker-compose build
+docker-compose up -d --build
 ```
 
 
-### Pagination
-The API supports pagination, by default responses have a page_size=10 but if you want change that you can pass through params page=size=X
+### Paginação
+
 A API suporta paginação, por padrão as requisições tem um tamanho de page_size=10, mas é possível editar esse valor caso necessário
 
 ```
