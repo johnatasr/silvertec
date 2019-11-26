@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0c9d0d3-7b68-42c2-9ad5-14b6ea99e348" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/silvertec/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/silvertec/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/silvertec/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/silvertec/wsgi.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
