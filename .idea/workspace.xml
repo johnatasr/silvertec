@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d0c9d0d3-7b68-42c2-9ad5-14b6ea99e348" name="Default Changelist" comment="" />
+    <list default="true" id="d0c9d0d3-7b68-42c2-9ad5-14b6ea99e348" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/silvertec/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/silvertec/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/silvertec/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/silvertec/wsgi.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +40,9 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dev\silvertec\apps" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\dev\silvertec\apps\pedidos\migrations" />
     </key>
@@ -51,7 +59,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Django server.silvertec">
+  <component name="RunManager" selected="Python.serializers">
     <configuration name="serializers" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="silvertec" />
       <option name="INTERPRETER_OPTIONS" value="" />
