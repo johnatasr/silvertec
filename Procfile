@@ -1,1 +1,1 @@
-web: uwsgi uwsgi.ini
+web: gunicorn silvertec.wsgi --log-file -
