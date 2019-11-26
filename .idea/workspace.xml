@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d0c9d0d3-7b68-42c2-9ad5-14b6ea99e348" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/silvertec/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/silvertec/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/silvertec/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/silvertec/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecouple" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requeriments.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
