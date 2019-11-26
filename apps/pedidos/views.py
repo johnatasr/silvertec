@@ -11,7 +11,7 @@ from .pagination import CustomPagination
 
 class pedidos_viewsets(ListCreateAPIView):
     serializer_class = PedidoSerializer
-    # permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
     pagination_class = CustomPagination
     queryset = Pedido.objects.all()
 
@@ -35,7 +35,7 @@ class pedidos_viewsets(ListCreateAPIView):
 
 class pedido_viewset(RetrieveUpdateDestroyAPIView):
     serializer_class = PedidoSerializer
-    # permission_classes = (IsAuthenticated, IsOwnerOrReadOnly,)
+    permission_classes = (IsAuthenticated, IsOwnerOrReadOnly,)
     @action(methods=['GET'], detail=True)
     def get_queryset(self, id):
         try:
@@ -58,7 +58,7 @@ class pedido_viewset(RetrieveUpdateDestroyAPIView):
 
 class computadores_viewsets(ListCreateAPIView):
     serializer_class = ComputadorSerializer
-    # permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
     pagination_class = CustomPagination
 
     def get_queryset(self):
@@ -133,7 +133,7 @@ class computadores_viewsets(ListCreateAPIView):
 
 class computador_viewset(RetrieveUpdateDestroyAPIView):
     serializer_class = ComputadorSerializer
-    # permission_classes = (IsAuthenticated, IsOwnerOrReadOnly,)
+    permission_classes = (IsAuthenticated, IsOwnerOrReadOnly,)
     @action(methods=['GET'], detail=True)
     def get_queryset(self, id):
         try:
