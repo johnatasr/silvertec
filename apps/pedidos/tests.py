@@ -1,68 +1,51 @@
+from pydoc import resolve
 from django.test import TestCase
-from rest_framework.test import APIClient
-from rest_framework import status
 from django.core.urlresolvers import reverse
-from .models import *
-from .serializers import *
-from django.utils import timezone
+from apps.pedidos.views import *
 
 
-class ComputadorTestCase(TestCase):
-    def setUp(self):
-        self.client = APIClient()
-        self.computador_data = {
-         "usuario": 1,
-         "descricao": "teste",
-         "processador": 2,
-         "pl": 3,
-         "memorias": [
-             3
-         ],
-         "vga": 2
-        },
+class ComputadoresUrlsTestCase(TestCase):
+
+    def test_resolves_list_url(self):
+        resolver = self.resolve_by_name('computadores')
+
+        self.assertEqual(resolver.func.cls, computadores_viewsets)
+
+    def test_resolves_retrieve_url(self):
+        resolver = self.resolve_by_name('computadores', id=1)
+
+        self.assertEqual(resolver.func.cls, computadores_viewsets)
+
+    def test_resolves_url_to_list_action(self):
+        resolver = self.resolve_by_name('computadores')
+
+        self.assertIn('get', resolver.func.actions)
+        self.assertEqual('list', resolver.func.actions['get'])
+
+    def test_resolves_url_to_retrieve_action(self):
+        resolver = self.resolve_by_name('computadores', id=1)
+
+        self.assertIn('get', resolver.func.actions)
+        self.assertEqual('retrieve', resolver.func.actions['get'])
+
+    def resolve_by_name(self, name, **kwargs):
+        url = reverse(name, kwargs=kwargs)
+        return resolve(url)
 
 
-    def test_criar_computador(self):
-        self.response = self.client.post(
-            reverse('itemList'),
-            self.computador_data,
-            format="json")
-        self.assertEqual(self.response.status_code, status.HTTP_201_CREATED)
+    def test_list_url_only_allows_get_and_post(self):
+        resolver = self.resolve_by_name('computadores')
 
-    def test_buscar_todos_computadores(self):
-        computadores = Computador.objects.all()
-        self.response = self.client.get(
-            reverse('itemList'),
-            format="json")
-        self.assertEqual(self.response.status_code, status.HTTP_200_OK)
-        self.assertContains(self.response, computadores)
+        self.assert_has_actions(['get', 'post'], resolver.func.actions)
 
+    def test_single_url_allows_all_methods_except_post(self):
 
+        resolver = self.resolve_by_name('computadores', id=1)
 
-class PedidosTestCase(TestCase):
-    def setUp(self):
-        self.pinheiro = Mercado.objects.create(nome='Pinheiro')
-        refri = Item.objects.create(nome='Guarana', preco=7)
-        self.pinheiro.estoque.add(refri)
-        self.pinheiro.save()
-        self.entrega = {
-            "comprador": 1,
-            "computadores": [
-                1, 2
-            ]
-        }
-    def test_criar_pedido(self):
-        response = self.client.post(
-            reverse('entregaView'), self.entrega, format="json")
-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assert_has_actions(['get', 'put', 'patch', 'delete'], resolver.func.actions)
 
-    def test_buscar_pedido(self):
-        entregas = Entrega.objects.all()
-        self.response = self.client.get(
-            reverse('entregaView'),
-            format="json")
+    def assert_has_actions(self, allowed, actions):
+        self.assertEqual(len(allowed), len(actions))
 
-        self.assertEqual(self.response.status_code, status.HTTP_200_OK)
-        self.assertContains(self.response, entregas)
-
-
+        for allows in allowed:
+            self.assertIn(allows, actions)
