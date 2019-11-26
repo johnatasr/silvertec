@@ -49,7 +49,7 @@ Link| Função
 `https://silvertecdeploy.herokuapp.com/detalhar/<id>`| Detalha Computador
 
 
-OBS - A validação via token no ambiente Heroku está desativada para melhor experiência visual no teste
+OBS - A validação via token no ambiente Heroku está desativada para melhor experiência visual no teste, acesse a administração https://silvertecdeploy.herokuapp.com/admin com as credênciais abaixo.
 
 Usuário Teste:
 
